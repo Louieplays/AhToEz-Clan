@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roster - AhToEz Clan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: blue;
+            color: lightgray;
+            font-family: 'Press Start 2P', cursive; /* Retro font */
+            text-align: center;
+            padding: 20px;
+            padding-bottom: 100px; /* Extra padding at the bottom for scrolling */
+        }
+        .retro-button {
+            background-color: lightgray;
+            border: none;
+            border-radius: 0; /* No rounded corners for rectangle */
+            padding: 8px 16px; /* Button padding */
+            font-size: 16px; /* Font size for buttons */
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s; /* Transition for hover */
+            margin-top: 10px; /* Space above the button */
+            color: blue; /* Text color same as background */
+            font-family: 'Press Start 2P', cursive; /* Same font */
+        }
+        .retro-button:hover {
+            background-color: #b0b0b0; /* Darker on hover */
+            transform: scale(1.05); /* Slightly increase size on hover */
+        }
+        .member {
+            cursor: pointer;
+            margin: 20px 0; /* Increased margin for more spacing */
+            font-size: 18px; /* Size of member names */
+            color: lightgray; /* Text color for member names */
+            font-family: 'Press Start 2P', cursive; /* Retro font */
+        }
+        .info {
+            display: none; /* Hidden by default */
+            margin: 20px 0; /* Increased space above and below the info */
+            font-size: 14px; /* Size of additional information */
+            color: white; /* Color for information */
+        }
+        .stats-button {
+            display: none; /* Hidden by default */
+            font-size: 12px; /* Smaller font size for the stats button */
+            padding: 4px 10px; /* Adjusted padding for uniformity */
+            margin: 10px auto; /* Center button and reduce side margins */
+            width: fit-content; /* Adjust button width to content */
+        }
+        .button-container {
+            margin-top: 30px; /* Space above the button */
+        }
+    </style>
+    <script>
+        function toggleInfo(memberId, statsId) {
+            const info = document.getElementById(memberId);
+            const statsButton = document.getElementById(statsId);
+            const isVisible = info.style.display === "block";
+
+            info.style.display = isVisible ? "none" : "block";
+            statsButton.style.display = isVisible ? "none" : "block";
+        }
+    </script>
+</head>
+<body>
+    <h2>Meet The Clan</h2>
+
+    <div class="member" onclick="toggleInfo('louie-info', 'louie-stats')">AhToEz.Louie</div>
+    <div id="louie-info" class="info">Maker of the website therefore most sigma, also the all time carry and top fragger.</div>
+    <a id="louie-stats" class="retro-button stats-button" href="https://r6.tracker.network/r6siege/profile/ubi/ahtoez.louie/overview" target="_blank">Stats</a>
+
+    <div class="member" onclick="toggleInfo('dabwen-info', 'dabwen-stats')">AhToEz.Dabwen</div>
+    <div id="dabwen-info" class="info">If having 2000 ping was a kink.</div>
+    <a id="dabwen-stats" class="retro-button stats-button" href="https://r6.tracker.network/r6siege/profile/ubi/ahtoez.dabwen/overview" target="_blank">Stats</a>
+
+    <div class="member" onclick="toggleInfo('ethanos-info', 'ethanos-stats')">AhToEz.Ethanos</div>
+    <div id="ethanos-info" class="info">Worst in the stack no other words can be said.</div>
+    <a id="ethanos-stats" class="retro-button stats-button" href="https://r6.tracker.network/r6siege/profile/ubi/ahtoez.ethanos/overview" target="_blank">Stats</a>
+
+    <div class="member" onclick="toggleInfo('dingle-info', 'dingle-stats')">AhToEz.Dingle</div>
+    <div id="dingle-info" class="info">ALL TIME SUPPORT NO EXCEPTIONS.</div>
+    <a id="dingle-stats" class="retro-button stats-button" href="https://r6.tracker.network/r6siege/profile/ubi/ahtoez.dingle/overview" target="_blank">Stats</a>
+
+    <div class="member" onclick="toggleInfo('ghost-info', 'ghost-stats')">AhToEz.Ghost</div>
+    <div id="ghost-info" class="info">Sigma support player and very good at playing Thermite/Doc.</div>
+    <a id="ghost-stats" class="retro-button stats-button" href="https://r6.tracker.network/r6siege/profile/ubi/ahtoez.ghost/overview" target="_blank">Stats</a>
+
+    <div class="button-container">
+        <a href="index.html"><button class="retro-button">Back to Home</button></a>
+    </div>
+</body>
+</html>
