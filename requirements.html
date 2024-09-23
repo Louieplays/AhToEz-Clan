@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requirements - AhToEz Clan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: blue;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: auto;
+            margin: 0;
+            font-family: 'Press Start 2P', cursive;
+            color: lightgray;
+            padding: 20px;
+        }
+        h1 {
+            margin: 20px 0;
+        }
+        .dropdown {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 500px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .dropdown:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px); /* Jump effect */
+        }
+        .content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, opacity 0.5s ease;
+            opacity: 0;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            padding: 0 10px; /* Add padding for visual appeal */
+        }
+        .content.show {
+            max-height: 500px; /* Arbitrary large value to accommodate content */
+            opacity: 1;
+            padding: 10px; /* Show padding when content is visible */
+        }
+        .retro-button {
+            background-color: lightgray;
+            border: none;
+            border-radius: 0;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            width: 200px;
+            margin-top: 20px;
+            color: blue;
+            font-family: 'Press Start 2P', cursive;
+        }
+        .retro-button:hover {
+            background-color: #b0b0b0;
+            transform: scale(1.05);
+        }
+    </style>
+    <script>
+        function toggleDropdown(id) {
+            const content = document.getElementById(id);
+            if (content.classList.contains("show")) {
+                content.classList.remove("show");
+            } else {
+                const allContents = document.querySelectorAll('.content');
+                allContents.forEach((el) => {
+                    el.classList.remove("show");
+                });
+                content.classList.add("show");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Clan Requirements</h1>
+    
+    <div class="dropdown" onclick="toggleDropdown('requirements')">
+        <strong>Requirements</strong>
+    </div>
+    <div id="requirements" class="content">
+        <ul>
+            <li>K/D Higher than current GPA</li>
+            <li>No Girlfriends</li>
+            <li>Siege and Clan take priority over everything</li>
+            <li>Must "worship" the team mascot Louie</li>
+        </ul>
+    </div>
+
+    <div class="dropdown" onclick="toggleDropdown('statistic-requirements')">
+        <strong>Statistic Requirements</strong>
+    </div>
+    <div id="statistic-requirements" class="content">
+        <ul>
+            <li>K/D 1.0+</li>
+            <li>Previous rank Silver+ (exceptions can be made!)</li>
+        </ul>
+    </div>
+
+    <div class="dropdown" onclick="toggleDropdown('tech-to-follow')">
+        <strong>Tech To Follow</strong>
+    </div>
+    <div id="tech-to-follow" class="content">
+        <ul>
+            <li>On DAWGSSSS</li>
+            <li>Say dat dooo</li>
+            <li>I mean I guess</li>
+            <li>Eem, Betsy, Olive, Pohai Etc.</li>
+            <li>Miha</li>
+            <li>Louie</li>
+            <li>On bazinga</li>
+            <li>Rage Baiting AhToEz.Ethanos</li>
+            <li>DEADDDDDDD</li>
+            <li>Thats Silly</li>
+            <li>WAAHHHHHH</li>
+        </ul>
+    </div>
+
+    <div class="button-container">
+        <a href="index.html"><button class="retro-button">Back to Home</button></a>
+    </div>
+</body>
+</html>
