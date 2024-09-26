@@ -99,6 +99,9 @@
             margin-top: 10px;
             width: 200px; /* Width of the input */
         }
+        #secret-button {
+            display: none; /* Invisible by default */
+        }
     </style>
 </head>
 <body>
@@ -111,7 +114,7 @@
         <a href="apply.html"><button class="retro-button">Apply</button></a>
     </div>
 
-    <!-- Secret Button -->
+    <!-- Invisible Secret Button -->
     <button id="secret-button" class="retro-button">Secret</button>
 
     <!-- Secret Input Field -->
@@ -127,11 +130,10 @@
         const secretInput = document.getElementById('secret-input');
         const submitButton = document.getElementById('submit-button');
 
-        // Show the secret input when the button is clicked
-        secretButton.addEventListener('click', function() {
-            secretContainer.style.display = 'block'; // Show the input field
-            secretInput.focus(); // Focus on the input field
-        });
+        // Show the secret input when the button is clicked (for demo, change this to a real trigger)
+        secretButton.style.display = 'block'; // Temporarily display for testing
+        secretContainer.style.display = 'block'; // Show the input field for testing
+        secretInput.focus(); // Focus on the input field
 
         // Handle the submit button click
         submitButton.addEventListener('click', function() {
