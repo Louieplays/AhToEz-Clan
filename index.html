@@ -88,27 +88,9 @@
             background-color: #b0b0b0;
             transform: scale(1.1); /* Increase size on hover */
         }
-        /* Hidden message style */
-        #easter-egg-message {
-            display: none;
-            margin-top: 20px;
-            font-size: 24px;
-            color: yellow;
-            text-align: center;
-        }
-        /* Clickable area for the game link */
-        .clickable-area {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100px; /* Adjust the width as needed */
-            height: 100px; /* Adjust the height as needed */
-            cursor: pointer; /* Show pointer cursor */
-        }
     </style>
 </head>
 <body>
-    <div class="clickable-area" onclick="window.location.href='game.html'"></div> <!-- Clickable area for redirect -->
     <div class="reboot-text">Press any key to reboot<span class="flashing-underscore">_</span></div>
     <img src="ahtoez.gif" alt="ahtoez">
     <div class="upside-down">We make it too EZ</div>
@@ -118,19 +100,23 @@
         <a href="apply.html"><button class="retro-button">Apply</button></a>
     </div>
 
-    <!-- Hidden Easter Egg Message -->
-    <div id="easter-egg-message">🐣 You found the Easter Egg! 🐣</div>
-
     <script>
+        let inputSequence = '';
+
         document.addEventListener('keydown', function(event) {
-            // Check for a specific key (e.g., "E" key)
-            if (event.key === 'e' || event.key === 'E') {
-                const message = document.getElementById('easter-egg-message');
-                // Toggle visibility of the Easter egg message
-                message.style.display = message.style.display === 'none' ? 'block' : 'none';
+            // Append the pressed key to the sequence
+            inputSequence += event.key;
+
+            // Check if the last five characters are "ak12"
+            if (inputSequence.slice(-5) === 'ak12') {
+                window.location.href = 'game.html'; // Redirect to game.html
+            }
+
+            // Optional: Clear the input sequence after a certain length to prevent memory issues
+            if (inputSequence.length > 10) {
+                inputSequence = inputSequence.slice(1); // Keep only the last 10 characters
             }
         });
     </script>
 </body>
 </html>
-
