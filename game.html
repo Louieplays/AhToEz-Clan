@@ -3,40 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Page</title>
+    <title>AhToEz Clan - Games</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: blue;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             margin: 0;
             font-family: 'Press Start 2P', cursive;
             color: lightgray;
-            padding: 50px 0; /* Increase vertical spacing */
+            overflow: hidden; /* Hide overflow for falling effect */
+            background-color: black; /* Dark background for Matrix effect */
+            position: relative; /* Positioning for falling binary */
         }
-        .retro-button {
-            background-color: lightgray;
-            border: none;
-            border-radius: 0; /* No rounded corners */
-            padding: 10px 20px; /* Standard padding */
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
-            font-family: 'Press Start 2P', cursive;
-            color: blue;
+        .falling {
+            position: absolute;
+            top: -100%; /* Start above the screen */
+            width: 100%;
+            white-space: nowrap;
+            color: green;
+            opacity: 0.8;
+            font-size: 20px;
+            animation: fall linear infinite; /* Falling animation */
         }
-        .retro-button:hover {
-            background-color: #b0b0b0;
-            transform: scale(1.1); /* Increase size on hover */
+        @keyframes fall {
+            to {
+                transform: translateY(100vh); /* Fall down the screen */
+            }
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Center content vertically */
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to the Game!</h1>
-    <p>Here is where your game content would go.</p>
-    <a href="index.html"><button class="retro-button">Back to Home Page</button></a>
+    <div class="content">
+        <h1>Welcome to the Games!</h1>
+        <p>Choose a game to play:</p>
+        <a href="game1.html"><button class="retro-button">Game 1</button></a>
+        <a href="game2.html"><button class="retro-button">Game 2</button></a>
+        <a href="game3.html"><button class="retro-button">Game 3</button></a>
+    </div>
+
+    <script>
+        // Create falling binary effect
+        const binaryCharacters = '01';
+        const numberOfColumns = Math.floor(window.innerWidth / 20); // Adjust spacing based on font size
+
+        for (let i = 0; i < numberOfColumns; i++) {
+            const fallingText = document.createElement('div');
+            fallingText.className = 'falling';
+            fallingText.textContent = binaryCharacters.charAt(Math.floor(Math.random() * binaryCharacters.length));
+            fallingText.style.left = `${i * 20}px`; // Position each column
+            fallingText.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random fall speed
+            document.body.appendChild(fallingText);
+            setInterval(() => {
+                fallingText.textContent = binaryCharacters.charAt(Math.floor(Math.random() * binaryCharacters.length));
+            }, 500); // Change binary every 500ms
+        }
+    </script>
 </body>
 </html>
