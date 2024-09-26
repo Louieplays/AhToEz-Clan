@@ -1,1 +1,102 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>AhToEz Clan</title> <link rel="icon" href="favicon.ico" type="image/x-icon"> <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> <style> body { background-color: blue; display: flex; flex-direction: column; align-items: center; margin: 0; font-family: 'Press Start 2P', cursive; color: lightgray; overflow-y: auto; padding: 50px 0; /* Increase vertical spacing */ } img { width: 900px; height: auto; margin: 40px 0; /* Space between images and text */ transition: transform 0.3s; /* Smooth image scaling */ } img:hover { transform: scale(1.05); /* Scale image on hover */ } @media (max-width: 768px) { img { width: 300px; /* Smaller size for mobile */ } .button-container { flex-direction: column; /* Stack buttons vertically on mobile */ align-items: center; /* Center align buttons */ } .retro-button { width: 100%; /* Full width for mobile buttons */ margin: 10px 0; /* Space between buttons */ max-width: 300px; /* Optional: Set a max width for buttons */ } } @media (min-width: 769px) { .button-container { flex-direction: row; /* Align buttons horizontally on desktop */ } .retro-button { width: auto; /* Auto width for desktop */ margin: 0 10px; /* Space between buttons */ } } .reboot-text { margin: 20px 0; /* Space around the reboot text */ font-size: 12px; /* Smaller font size */ text-align: center; /* Center the text */ } .flashing-underscore { display: inline; /* Ensure it behaves like text */ animation: flash 1s infinite; /* Flashing effect */ } @keyframes flash { 0%, 100% { opacity: 1; } 50% { opacity: 0; } } .upside-down { transform: rotate(180deg); /* Rotate text upside down */ margin: 10px 0; /* Space above and below the text */ font-size: 8px; /* Smaller font size */ } .button-container { display: flex; margin: 40px 0; /* Space above and below the button container */ } .retro-button { background-color: lightgray; border: none; border-radius: 0; /* No rounded corners */ padding: 10px 20px; /* Standard padding */ font-size: 16px; cursor: pointer; transition: background-color 0.3s, transform 0.3s; font-family: 'Press Start 2P', cursive; color: blue; } .retro-button:hover { background-color: #b0b0b0; transform: scale(1.1); /* Increase size on hover */ } </style> </head> <body> <div class="reboot-text">Press any key to reboot<span class="flashing-underscore">_</span></div> <img src="ahtoez.gif" alt="ahtoez"> <div class="upside-down">We make it too EZ</div> <div class="button-container"> <a href="roster.html"><button class="retro-button">Roster</button></a> <a href="requirements.html"><button class="retro-button">Requirements</button></a> <a href="apply.html"><button class="retro-button">Apply</button></a> </div> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AhToEz Clan</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: blue;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            font-family: 'Press Start 2P', cursive;
+            color: lightgray;
+            overflow-y: auto;
+            padding: 50px 0; /* Increase vertical spacing */
+        }
+        img {
+            width: 900px;
+            height: auto;
+            margin: 40px 0; /* Space between images and text */
+            transition: transform 0.3s; /* Smooth image scaling */
+        }
+        img:hover {
+            transform: scale(1.05); /* Scale image on hover */
+        }
+        @media (max-width: 768px) {
+            img {
+                width: 300px; /* Smaller size for mobile */
+            }
+            .button-container {
+                flex-direction: column; /* Stack buttons vertically on mobile */
+                align-items: center; /* Center align buttons */
+            }
+            .retro-button {
+                width: 100%; /* Full width for mobile buttons */
+                margin: 10px 0; /* Space between buttons */
+                max-width: 300px; /* Optional: Set a max width for buttons */
+            }
+        }
+        @media (min-width: 769px) {
+            .button-container {
+                flex-direction: row; /* Align buttons horizontally on desktop */
+            }
+            .retro-button {
+                width: auto; /* Auto width for desktop */
+                margin: 0 10px; /* Space between buttons */
+            }
+        }
+        .reboot-text {
+            margin: 20px 0; /* Space around the reboot text */
+            font-size: 12px; /* Smaller font size */
+            text-align: center; /* Center the text */
+        }
+        .flashing-underscore {
+            display: inline; /* Ensure it behaves like text */
+            animation: flash 1s infinite; /* Flashing effect */
+        }
+        @keyframes flash {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .upside-down {
+            transform: rotate(180deg); /* Rotate text upside down */
+            margin: 10px 0; /* Space above and below the text */
+            font-size: 8px; /* Smaller font size */
+        }
+        .button-container {
+            display: flex;
+            margin: 40px 0; /* Space above and below the button container */
+        }
+        .retro-button {
+            background-color: lightgray;
+            border: none;
+            border-radius: 0; /* No rounded corners */
+            padding: 10px 20px; /* Standard padding */
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            font-family: 'Press Start 2P', cursive;
+            color: blue;
+        }
+        .retro-button:hover {
+            background-color: #b0b0b0;
+            transform: scale(1.1); /* Increase size on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="reboot-text">Press any key to reboot<span class="flashing-underscore">_</span></div>
+    <img src="ahtoez.gif" alt="ahtoez">
+    <div class="upside-down">We make it too EZ</div>
+    <div class="button-container">
+        <a href="roster.html"><button class="retro-button">Roster</button></a>
+        <a href="requirements.html"><button class="retro-button">Requirements</button></a>
+        <a href="apply.html"><button class="retro-button">Apply</button></a>
+    </div>
+</body>
+</html>
