@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: blue;
+            color: lightgray;
+            font-family: 'Press Start 2P', cursive;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: lightgray;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #b0b0b0;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Guess the Number!</h1>
+    <p>Guess a number between 1 and 100:</p>
+    <input type="number" id="guessInput" min="1" max="100" />
+    <button id="guessButton">Submit Guess</button>
+    <div id="message"></div>
+    <script>
+        const randomNumber = Math.floor(Math.random() * 100) + 1;
+        const guessButton = document.getElementById('guessButton');
+        const guessInput = document.getElementById('guessInput');
+        const messageDiv = document.getElementById('message');
+
+        guessButton.addEventListener('click', function() {
+            const userGuess = Number(guessInput.value);
+            if (userGuess < 1 || userGuess > 100) {
+                messageDiv.textContent = 'Please enter a number between 1 and 100.';
+                return;
+            }
+            if (userGuess === randomNumber) {
+                messageDiv.textContent = '🎉 Correct! You guessed the number! 🎉';
+            } else if (userGuess < randomNumber) {
+                messageDiv.textContent = 'Too low! Try again!';
+            } else {
+                messageDiv.textContent = 'Too high! Try again!';
+            }
+            guessInput.value = '';
+            guessInput.focus();
+        });
+    </script>
+</body>
+</html>
