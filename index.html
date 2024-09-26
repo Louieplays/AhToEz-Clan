@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to AhToEz Clan, where we make gaming too easy!">
     <title>AhToEz Clan</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -27,47 +28,6 @@
         img:hover {
             transform: scale(1.05); /* Scale image on hover */
         }
-        @media (max-width: 768px) {
-            img {
-                width: 300px; /* Smaller size for mobile */
-            }
-            .button-container {
-                flex-direction: column; /* Stack buttons vertically on mobile */
-                align-items: center; /* Center align buttons */
-            }
-            .retro-button {
-                width: 100%; /* Full width for mobile buttons */
-                margin: 10px 0; /* Space between buttons */
-                max-width: 300px; /* Optional: Set a max width for buttons */
-            }
-        }
-        @media (min-width: 769px) {
-            .button-container {
-                flex-direction: row; /* Align buttons horizontally on desktop */
-            }
-            .retro-button {
-                width: auto; /* Auto width for desktop */
-                margin: 0 10px; /* Space between buttons */
-            }
-        }
-        .reboot-text {
-            margin: 20px 0; /* Space around the reboot text */
-            font-size: 12px; /* Smaller font size */
-            text-align: center; /* Center the text */
-        }
-        .flashing-underscore {
-            display: inline; /* Ensure it behaves like text */
-            animation: flash 1s infinite; /* Flashing effect */
-        }
-        @keyframes flash {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-        .upside-down {
-            transform: rotate(180deg); /* Rotate text upside down */
-            margin: 10px 0; /* Space above and below the text */
-            font-size: 8px; /* Smaller font size */
-        }
         .button-container {
             display: flex;
             margin: 40px 0; /* Space above and below the button container */
@@ -87,16 +47,37 @@
             background-color: #b0b0b0;
             transform: scale(1.1); /* Increase size on hover */
         }
+        .secret-button {
+            position: absolute;
+            width: 100%;
+            height: 100px; /* Adjust height for button area */
+            top: 300px; /* Position below the main buttons */
+            left: 0;
+            cursor: pointer;
+            opacity: 0; /* Invisible button */
+        }
     </style>
 </head>
 <body>
     <div class="reboot-text">Press any key to reboot<span class="flashing-underscore">_</span></div>
-    <img src="ahtoez.gif" alt="ahtoez">
+    <img src="ahtoez.gif" alt="Animated logo of AhToEz Clan">
     <div class="upside-down">We make it too EZ</div>
     <div class="button-container">
         <a href="roster.html"><button class="retro-button">Roster</button></a>
         <a href="requirements.html"><button class="retro-button">Requirements</button></a>
         <a href="apply.html"><button class="retro-button">Apply</button></a>
     </div>
+    <div class="secret-button" onclick="askForPassword()"></div>
+
+    <script>
+        function askForPassword() {
+            const password = prompt("Enter the secret password:");
+            if (password === "ak12") {
+                window.location.href = "game.html"; // Redirect to game.html
+            } else {
+                alert("Incorrect password! Access denied.");
+            }
+        }
+    </script>
 </body>
 </html>
